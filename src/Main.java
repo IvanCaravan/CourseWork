@@ -15,7 +15,7 @@ public class Main {
         employees[8] = new Employee("Авдотьев", "Александр", "Борисович", 6, 58000);
         employees[9] = new Employee("Поликаропов", "Игорь", "Алексеевич", 1, 30000);
 
-        String fullList = getFullList(employees);
+        getFullList(employees);
         int salary = calculateAllSalaries(employees);
         System.out.println(salary);
         double avgSalary = calculateAverageSalary(employees);
@@ -24,14 +24,12 @@ public class Main {
         System.out.println(minSalary);
         int maxSalary = findTheMostExpensive(employees);
         System.out.println(maxSalary);
-        String list = getFullNames(employees);
-        System.out.println(list);
+        getFullNames(employees);
     }
-    public static String getFullList(Employee[] employees) {
+    public static void getFullList(Employee[] employees) {
         for (Employee i : employees) {
             if (i != null) System.out.println("i = " + i);
         }
-        return null;
     }
     public static int calculateAllSalaries(Employee[] employees) {
         int totalSum = 0;
@@ -73,17 +71,11 @@ public class Main {
         return maxSalary;
     }
 
-    public static String getFullNames(Employee[] employees) {
-        String list = "";
+    public static void getFullNames(Employee[] employees) {
         for (Employee i : employees) {
             if (i != null) {
-                list += i.getFullName() + ", ";
+                System.out.println(i.getFullName() + " ");
             }
         }
-        if (!list.isEmpty()) {
-            list = list.substring(0, list.length() - 2);
-        }
-        return list;
     }
-
 }
