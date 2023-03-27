@@ -14,9 +14,8 @@ public class Main {
         employees[7] = new Employee("Верещагин", "Максим", "Александрович", 2, 67000);
         employees[8] = new Employee("Авдотьев", "Александр", "Борисович", 6, 58000);
         employees[9] = new Employee("Поликаропов", "Игорь", "Алексеевич", 1, 30000);
-        for (Employee i : employees) {
-            if (i != null) System.out.println("i = " + i);
-        }
+
+        String fullList = getFullList(employees);
         int salary = calculateAllSalaries(employees);
         System.out.println(salary);
         double avgSalary = calculateAverageSalary(employees);
@@ -28,7 +27,12 @@ public class Main {
         String list = getFullNames(employees);
         System.out.println(list);
     }
-
+    public static String getFullList(Employee[] employees) {
+        for (Employee i : employees) {
+            if (i != null) System.out.println("i = " + i);
+        }
+        return null;
+    }
     public static int calculateAllSalaries(Employee[] employees) {
         int totalSum = 0;
         for (Employee i : employees) {
